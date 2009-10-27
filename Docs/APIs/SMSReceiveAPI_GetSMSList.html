@@ -1,0 +1,53 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../Style.css">
+	<title>Open movilforum Java SDK</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<h1><a href="http://open.movilforum.com"></a></h1>
+	</div>
+
+	<div id="sidebar">
+		<iframe src ="../Sidebar.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+	</div>
+	
+	<div id="content">
+		<h3>GetSMSList</h3>
+
+		Retrieves a list of SMS messages via POP server<br><br>
+
+		<font face="Courier New">List<Message> GetSMSList(String Server, String User, String Pwd)</font><br><br>
+
+		<b>Parameters</b><br>
+		<i>Server</i><br>
+		&nbsp;&nbsp;String with POP server address<br><br>
+		<i>User</i><br>
+		&nbsp;&nbsp;String with user's login<br><br>
+		<i>Pwd</i><br>
+		&nbsp;&nbsp;String with user's password<br><br>
+
+		<b>Return</b><br>
+		List of SMS messages in the form:<br><br>
+		Each element in the list is a <i>Message</i>.<br><br>
+
+		Below you can see a sample code to traverse the list:
+
+		<pre>
+	Iterator<Message> mails = mailList.iterator();
+	Message message =  null;
+			
+	while(mails.hasNext()) {
+		message = (Message) mails.next();				
+		String from = oSMSReceiver.readFrom(message);
+		String body = oSMSReceiver.readBody(message);
+		String subject = oSMSReceiver.readSubject(message);
+	}
+		</pre>
+
+	</div>
+</div>
+</body>
+</html>

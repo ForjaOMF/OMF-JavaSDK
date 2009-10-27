@@ -1,0 +1,8 @@
+Para instalar el certificado debemos escribir uno de los siguientes comando en la línea del símbolo del sistema.
+Si la instalación de java se realiza correctamente la forma ideal de instalar el certificado es de la siguierte manera:
+
+%JAVA_HOME%\bin\keytool -import -file c:\opensms.movistar.es.cer -keypass changeit -keystore %JAVA_HOME%/jre/lib/security/cacerts
+
+En el caso de no tener el path de java añadido tendríamos que añadirlo a mano o ponerlo de la siguiente forma:
+
+“C:\Sun\SDK\jdk\bin\keytool” -import -file c:\opensms.movistar.es.cer -keypass changeit -keystore “C:\Sun\SDK\jdk\jre\lib\security\cacerts”
